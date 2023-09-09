@@ -30,3 +30,7 @@ It was also an experiment in working with the constraints that are a console app
 10.  When you are finished you can hit escape, to leave the program
 11.  You will be shown the location where the files can be found, as a reminder, as you exit the program  
 ![Exit Message](./Images/Exit_Message.png "Exit Message")
+
+### Quick Add
+When launching the application type brag add, then hit enter.  This will skip the menu, going straight to the add option.  Once you finish bragging, the application will close.  
+![Quick Add](./Images/quick_add.png "Quick Add")  

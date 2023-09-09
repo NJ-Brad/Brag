@@ -6,36 +6,43 @@ namespace Brag
     {
         static async Task<int> Main(string[] args)
         {
-            MenuList ml = new MenuList();
-            ml.Add("Add", returnValue: "add");
-            ml.Add("View", returnValue: "view2");
-            //ml.Add("View File", returnValue: "view2");
-            //            ml.Add("Delete", returnValue: "delete");
-
-            bool quit = false;
-            do
+            if ((args.Length == 1) && (args[0].Equals("add", StringComparison.OrdinalIgnoreCase)))
             {
-                string selection = ml.Pick();
-                switch (selection)
+                await AddNote();
+            }
+            else
+            {
+                MenuList ml = new MenuList();
+                ml.Add("Add", returnValue: "add");
+                ml.Add("View", returnValue: "view2");
+                //ml.Add("View File", returnValue: "view2");
+                //            ml.Add("Delete", returnValue: "delete");
+
+                bool quit = false;
+                do
                 {
-                    case "add":
-                        await AddNote();
-                        break;
-                    //case "view":
-                    //    await ViewFile();
-                    //    break;
-                    case "view2":
-                        await View2();
-                        break;
-                    //case "delete":
-                    //    Console.WriteLine("Delete was chosen");
-                    //    Console.Read();
-                    //    break;
-                    case "quit":
-                        quit = true;
-                        break;
-                }
-            } while (!quit);
+                    string selection = ml.Pick();
+                    switch (selection)
+                    {
+                        case "add":
+                            await AddNote();
+                            break;
+                        //case "view":
+                        //    await ViewFile();
+                        //    break;
+                        case "view2":
+                            await View2();
+                            break;
+                        //case "delete":
+                        //    Console.WriteLine("Delete was chosen");
+                        //    Console.Read();
+                        //    break;
+                        case "quit":
+                            quit = true;
+                            break;
+                    }
+                } while (!quit);
+            }
 
             Console.Clear();
             string folder = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "ReviewNotes");
