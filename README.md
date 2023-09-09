@@ -25,7 +25,7 @@ It was also an experiment in working with the constraints that are a console app
 7. Type your brag.  End by putting a . on the last line, by itself, then hitting enter  
 ![Add Created](./Images/Add_created.png "Add Created")
 8. Type 2, then hit enter.  You will then see all of your brags.  
-![View](./Images/view.png "View")
+![View](./Images/View.png "View")
 9. You can scroll up and down, with the up arrow and down arrow.  Hit escape to exit
 10.  When you are finished you can hit escape, to leave the program
 11.  You will be shown the location where the files can be found, as a reminder, as you exit the program  
