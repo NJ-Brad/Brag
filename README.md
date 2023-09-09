@@ -17,9 +17,9 @@ It was also an experiment in working with the constraints that are a console app
 2. Copy the .exe file to a directory in your path
 3. Open a command prompt
 4. Type brag, then hit enter  
-![Launch](./images/launch.png "Launch Command")
+![Launch](images/launch.png "Launch Command")
 5. You will see the main menu  
-![Main Menu](./images/main_menu.png "Main Menu")
+![Main Menu](images/main_menu.png "Main Menu")
 6. Type 1, then hit enter.  You will be able to add a "brag"  
 ![Add Start](./images/Add_start.png "Add Start")
 7. Type your brag.  End by putting a . on the last line, by itself, then hitting enter  
