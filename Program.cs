@@ -45,15 +45,23 @@ namespace Brag
             }
 
             Console.Clear();
-            string folder = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "ReviewNotes");
+            string folder = GetFolder();
 
             Console.WriteLine($"Files are stored in this folder {folder}");
 
             Console.WriteLine();
             Console.WriteLine("Press any key to exit");
             Console.ReadKey();
+            Console.Clear();
 
             return 0;
+        }
+
+        private static string GetFolder()
+        {
+            string folder = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Brag");
+            Directory.CreateDirectory(folder);
+            return folder;
         }
 
         internal static async Task AddNote()
@@ -81,7 +89,7 @@ namespace Brag
 
         internal static async Task ViewFile()
         {
-            string folder = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "ReviewNotes");
+            string folder = GetFolder();
 
             string[] fileNames = Directory.GetFiles(folder);
 
@@ -118,7 +126,7 @@ namespace Brag
 
         internal static async Task View2()
         {
-            string folder = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "ReviewNotes");
+            string folder = GetFolder();
 
             string[] fileNames = Directory.GetFiles(folder);
 
@@ -149,8 +157,7 @@ namespace Brag
         // this uses the date and a sequence at the end.  If I write more than 99 items in a single day, something is really weird
         private static string WriteFile(string fileText)
         {
-            string folder = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "ReviewNotes");
-            Directory.CreateDirectory(folder);
+            string folder = GetFolder();
 
             string fileName = Path.ChangeExtension(Path.Combine(folder, DateTime.Now.ToString("yyyyMMdd") + "_01"), "txt");
 
