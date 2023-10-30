@@ -1,8 +1,7 @@
 {
   "profiles": {
     "Brag": {
-      "commandName": "Project",
-      "commandLineArgs": "add"
+      "commandName": "Project"
     }
   }
 }
